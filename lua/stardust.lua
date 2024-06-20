@@ -81,10 +81,10 @@ Stardust.palette = {
   Debug = "#bca3a3",
   Define = "#ffcfaf",
   Delimiter = "#8f8f8f",
-  DiffAdd_bg = "#313c36",
-  DiffChange_bg = "#333333",
-  DiffDelete_bg = "#464646",
-  DiffText_bg = "#41363c",
+  DiffAdd_bg = "#313c36", -- Background for DiffAdd
+  DiffChange_bg = "#333333", -- Background for DiffChange
+  DiffDelete_bg = "#464646", -- Background for DiffDelete
+  DiffText_bg = "#41363c", -- Background for DiffText
   Directory = "#9fafaf",
   ErrorMsg = "#80d4aa",
   ErrorMsg_bg = "#2f2f2f",
@@ -231,6 +231,20 @@ local function get_groups()
 
   local groups = {
     -- Define highlight groups
+    -- Below are some examples; you should expand this according to your 'brightburn' configuration
+    Boolean = { fg = colors.Boolean, bg = "NONE", bold = false, italic = false },
+    Character = { fg = colors.Character, bg = "NONE", bold = true, italic = false },
+    Comment = { fg = colors.Comment, bg = "NONE", bold = false, italic = false },
+    Conditional = { fg = colors.Conditional, bg = "NONE", bold = true, italic = false },
+    Constant = { fg = colors.Constant, bg = "NONE", bold = true, italic = false },
+    Cursor = { fg = colors.Cursor, bg = colors.Cursor_bg, bold = true, italic = false },
+    Debug = { fg = colors.Debug, bg = "NONE", bold = true, italic = false },
+    Define = { fg = colors.Define, bg = "NONE", bold = true, italic = false },
+    Delimiter = { fg = colors.Delimiter, bg = "NONE", bold = false, italic = false },
+    Directory = { fg = colors.Directory, bg = "NONE", bold = true, italic = false },
+    ErrorMsg = { fg = colors.ErrorMsg, bg = colors.ErrorMsg_bg, bold = true, italic = false },
+    Exception = { fg = colors.Exception, bg = "NONE", bold = true, italic = false },
+    -- Add other highlight groups following the same pattern
   }
 
   for group, hl in pairs(config.overrides) do
