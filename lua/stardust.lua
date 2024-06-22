@@ -68,7 +68,7 @@ Stardust.config = {
   transparent_mode = false,
 }
 
--- main Stardust color palette
+-- Main Stardust color palette
 ---@class StardustPalette
 Stardust.palette = {
   Boolean = "#ffa263",
@@ -81,10 +81,10 @@ Stardust.palette = {
   Debug = "#bca3a3",
   Define = "#ffcfaf",
   Delimiter = "#8f8f8f",
-  DiffAdd_bg = "#313c36", -- Background for DiffAdd
-  DiffChange_bg = "#333333", -- Background for DiffChange
-  DiffDelete_bg = "#464646", -- Background for DiffDelete
-  DiffText_bg = "#41363c", -- Background for DiffText
+  DiffAdd_bg = "#313c36",
+  DiffChange_bg = "#333333",
+  DiffDelete_bg = "#464646",
+  DiffText_bg = "#41363c",
   Directory = "#9fafaf",
   ErrorMsg = "#80d4aa",
   ErrorMsg_bg = "#2f2f2f",
@@ -150,26 +150,25 @@ local function get_colors()
 
   local color_groups = {
     dark = {
-      bg0 = "#282828", -- dark gray as background
-      bg1 = "#3c3836", -- slightly lighter gray
-      bg2 = "#504945", -- even lighter gray
-      bg3 = "#665c54", -- softer dark gray
-      bg4 = "#7c6f64", -- light brown-gray
-      fg0 = "#fbf1c7", -- very light foreground
-      fg1 = "#ebdbb2", -- light foreground
-      fg2 = "#d5c4a1", -- warm gray
-      fg3 = "#bdae93", -- darker warm gray
-      fg4 = "#a89984", -- soft brown
-      red = "#fb4934", -- bright red
-      green = "#b8bb26", -- bright green
-      yellow = "#fabd2f", -- bright yellow
-      blue = "#83a598", -- soft blue
-      purple = "#d3869b", -- soft purple
-      aqua = "#8ec07c", -- soft aqua
-      orange = "#fe8019", -- bright orange
+      bg0 = "#282828",
+      bg1 = "#3c3836",
+      bg2 = "#504945",
+      bg3 = "#665c54",
+      bg4 = "#7c6f64",
+      fg0 = "#fbf1c7",
+      fg1 = "#ebdbb2",
+      fg2 = "#d5c4a1",
+      fg3 = "#bdae93",
+      fg4 = "#a89984",
+      red = "#fb4934",
+      green = "#b8bb26",
+      yellow = "#fabd2f",
+      blue = "#83a598",
+      purple = "#d3869b",
+      aqua = "#8ec07c",
+      orange = "#fe8019",
     },
     light = {
-      -- Assuming a hypothetical light color scheme, these values are placeholders
       bg0 = "#fbf1c7",
       bg1 = "#ebdbb2",
       bg2 = "#d5c4a1",
@@ -192,9 +191,9 @@ local function get_colors()
 
   if contrast ~= nil and contrast ~= "" then
     color_groups[bg].bg0 = p[bg .. "0_" .. contrast]
-    color_groups[bg].dark_red = p[bg .. "_red_" .. contrast]
-    color_groups[bg].dark_green = p[bg .. "_green_" .. contrast]
-    color_groups[bg].dark_aqua = p[bg .. "_aqua_" .. contrast]
+    color_groups[bg].red = p[bg .. "_red_" .. contrast]
+    color_groups[bg].green = p[bg .. "_green_" .. contrast]
+    color_groups[bg].aqua = p[bg .. "_aqua_" .. contrast]
   end
 
   return color_groups[bg]
@@ -204,18 +203,17 @@ local function get_groups()
   local colors = get_colors()
   local config = Stardust.config
 
-  -- Configuration for terminal colors
   if config.terminal_colors then
     local term_colors = {
       colors.bg0,
-      colors.neutral_red,
-      colors.neutral_green,
-      colors.neutral_yellow,
-      colors.neutral_blue,
-      colors.neutral_purple,
-      colors.neutral_aqua,
+      colors.red,
+      colors.green,
+      colors.yellow,
+      colors.blue,
+      colors.purple,
+      colors.aqua,
       colors.fg4,
-      colors.gray,
+      colors.bg2,
       colors.red,
       colors.green,
       colors.yellow,
@@ -225,16 +223,14 @@ local function get_groups()
       colors.fg1,
     }
     for index, value in ipairs(term_colors) do
-      vim.g["terminal_color_" .. index - 1] = value
+      vim.g["terminal_color_" .. (index - 1)] = value
     end
   end
 
   local groups = {
-    -- Define highlight groups
-    -- Below are some examples; you should expand this according to your 'brightburn' configuration
     Boolean = { fg = colors.Boolean, bg = "NONE", bold = false, italic = false },
     Character = { fg = colors.Character, bg = "NONE", bold = true, italic = false },
-    Comment = { fg = colors.Comment, bg = "NONE", bold = false, italic = false },
+    Comment = { fg = colors.Comment, bg = "NONE", bold = false, italic = config.italic.comments },
     Conditional = { fg = colors.Conditional, bg = "NONE", bold = true, italic = false },
     Constant = { fg = colors.Constant, bg = "NONE", bold = true, italic = false },
     Cursor = { fg = colors.Cursor, bg = colors.Cursor_bg, bold = true, italic = false },
@@ -249,7 +245,6 @@ local function get_groups()
 
   for group, hl in pairs(config.overrides) do
     if groups[group] then
-      -- "link" should not mix with other configs (:h hi-link)
       groups[group].link = nil
     end
 
@@ -267,20 +262,18 @@ end
 --- main load function
 Stardust.load = function()
   if vim.version().minor < 8 then
-    vim.notify_once("stardust.nvim: you must use neovim 0.8 or higher")
+    vim.notify_once("stardust.nvim: you must use Neovim 0.8 or higher", vim.log.levels.ERROR)
     return
   end
 
-  -- reset colors
   if vim.g.colors_name then
-    vim.cmd.hi("clear")
+    vim.cmd("hi clear")
   end
   vim.g.colors_name = "stardust"
   vim.o.termguicolors = true
 
   local groups = get_groups()
 
-  -- add highlights
   for group, settings in pairs(groups) do
     vim.api.nvim_set_hl(0, group, settings)
   end
