@@ -99,7 +99,7 @@ M.base = {
   Todo = { fg = c.todo_fg, bg = c.bg, style = "bold" },
   Type = { fg = c.type_fg },
   Typedef = { fg = c.typedef_fg },
-  Variable = { fg = c.variable_fg },
+  Variable = { fg = c.accent },
   VertSplit = { fg = c.vert_split_fg, bg = c.dark },
   Visual = { bg = c.visual_bg },
   VisualNOS = { bg = c.dark },
