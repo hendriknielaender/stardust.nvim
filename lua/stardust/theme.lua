@@ -306,7 +306,6 @@ M.plugins = {
   TSQueryLinterError = { fg = c.warning_orange },
   TSRepeat = { fg = c.purple },
   TSString = { fg = c.orange },
-  TSStringEscape = { fg = c.yellow_orange },
   TSStringRegex = { fg = c.orange },
   TSStrong = { fg = c.yellow_orange },
   TSStructure = { fg = c.light_blue },
