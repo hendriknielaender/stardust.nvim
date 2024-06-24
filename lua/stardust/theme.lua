@@ -244,7 +244,6 @@ M.plugins = {
   NeogitDiffDeleteHighlight = { fg = c.diff_delete, bg = c.dark },
   -- Nvim-tree
   NvimTreeCursorLine = { bg = c.bg },
-  NvimTreeExecFile = { fg = c.green },
   NvimTreeFolderIcon = { fg = c.blue },
   NvimTreeFolderName = { fg = c.blue },
   NvimTreeGitDeleted = { fg = c.diff_delete },
