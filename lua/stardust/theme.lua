@@ -130,7 +130,6 @@ M.base = {
   markdownIdDeclaration = { fg = c.blue },
   markdownIdDelimiter = { fg = c.light_gray },
   markdownItalic = { style = "italic" },
-  markdownLinkDelimiter = { fg = c.light_gray },
   markdownLinkText = { fg = c.blue },
   markdownListMarker = { fg = c.red },
   markdownRule = { fg = c.accent },
