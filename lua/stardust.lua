@@ -240,6 +240,7 @@ local function get_groups()
     Directory = { fg = colors.Directory, bg = "NONE", bold = true, italic = false },
     ErrorMsg = { fg = colors.ErrorMsg, bg = colors.ErrorMsg_bg, bold = true, italic = false },
     Exception = { fg = colors.Exception, bg = "NONE", bold = true, italic = false },
+    String = { fg = colors.yellow, bg = "NONE", bold = false, italic = false },
     -- Add other highlight groups following the same pattern
   }
 
