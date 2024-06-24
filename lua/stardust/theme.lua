@@ -1,5 +1,5 @@
-local c = require("darkplus.colors")
-local config = require("darkplus.config")
+local c = require("stardust.colors")
+local config = require("stardust.config")
 
 local M = {}
 
