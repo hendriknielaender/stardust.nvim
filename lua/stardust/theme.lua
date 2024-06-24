@@ -101,7 +101,7 @@ M.base = {
   Typedef = { fg = c.typedef_fg },
   Variable = { fg = c.accent },
   VertSplit = { fg = c.vert_split_fg, bg = c.dark },
-  Visual = { bg = c.visual_bg },
+  Visual = { bg = c.cursor_bg },
   VisualNOS = { bg = c.dark },
   WarningMsg = { fg = c.warning_msg_fg, bg = c.bg },
   Whitespace = { fg = c.whitespace_fg },
