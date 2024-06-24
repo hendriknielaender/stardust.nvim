@@ -1,1 +1,2 @@
-require("stardust").load()
+package.loaded["stardust"] = nil
+require("stardust")
