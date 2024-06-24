@@ -133,7 +133,6 @@ M.base = {
   markdownLinkDelimiter = { fg = c.light_gray },
   markdownLinkText = { fg = c.blue },
   markdownListMarker = { fg = c.red },
-  markdownOrderedListMarker = { fg = c.red },
   markdownRule = { fg = c.accent },
   markdownUrl = { fg = c.cyan, style = "underline" },
 }
