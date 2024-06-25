@@ -11,6 +11,10 @@
 
 </div>
 
+## Theme
+
+![image](stardust.png)
+
 # Prerequisites
 
 Neovim 0.8.0+
