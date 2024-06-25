@@ -48,4 +48,11 @@ return {
   preproc_color = "#dfaf8f", -- Color for preprocessor directives
   directory_fg = "#9fafaf", -- Foreground color for directories
   inc_search_bg = "#385f38", -- Background color for incremental search
+  non_text_fg = "#404040",
+  question_fg = "#ffcfaf", -- A light and softer color suitable for question prompts
+  type_fg = "#ffa263", -- Matches the accent color for type definitions
+  typedef_fg = "#ffa263", -- Same as type, for consistency with typedefs
+  more_msg = "#ffffff", -- Bright white for more visible messages
+  operator_fg = "#dcdccc", -- Foreground color to keep operators neutral
+  quick_fix_line_bg = "#2b2b2b", -- Dark background for highlighting quick fix lines
 }
