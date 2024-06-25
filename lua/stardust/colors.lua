@@ -55,4 +55,8 @@ return {
   more_msg = "#ffffff", -- Bright white for more visible messages
   operator_fg = "#dcdccc", -- Foreground color to keep operators neutral
   quick_fix_line_bg = "#2b2b2b", -- Dark background for highlighting quick fix lines
+  float_color = "#c0bed1", -- A neutral, soft color for floating point numbers
+  number_fg = "#8cd0d3", -- A distinct, slightly muted teal for numeric literals
+  whitespace_fg = "#606060", -- A grey color for whitespace characters, visible but unobtrusive
+  tag_fg = "#e89393", -- A soft red to highlight tags, making them stand out subtly
 }
