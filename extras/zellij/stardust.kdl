@@ -1,0 +1,19 @@
+// Stardust Zellij Colors
+// Add this file to your `CONFIG_DIR/themes` directory as described here:
+// https://zellij.dev/documentation/themes#getting-zellij-to-pick-up-the-theme
+
+themes {
+    stardust {
+        fg "#dcdccc"
+        bg "#18181b"
+        black "#1d202f"
+        red "#f44747"
+        green "#6A9955"
+        yellow "#f7a41d"
+        blue "#569cd6"
+        magenta "#d16d9e"
+        cyan "#4ec9b0"
+        white "#a9b1d6"
+        orange "#ffa263"
+    }
+}
