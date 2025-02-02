@@ -1,0 +1,35 @@
+# ------------------------------
+# stardust ghostty theme
+# Save this as, for example, "~/.config/ghostty/themes/stardust"
+# Then set in your Ghostty config: theme = stardust
+# ------------------------------
+
+palette = 0  = #18181b     # black
+palette = 1  = #F44747     # red
+palette = 2  = #6A9955     # green
+palette = 3  = #f7a41d     # yellow
+palette = 4  = #569CD6     # blue
+palette = 5  = #D16D9E     # magenta
+palette = 6  = #4EC9B0     # cyan
+palette = 7  = #dcdccc     # white
+palette = 8  = #2b2b2b     # bright black 
+palette = 9  = #D16969     # bright red
+palette = 10 = #acd2ac     # bright green
+palette = 11 = #fcca7c     # bright yellow
+palette = 12 = #9CDCFE     # bright blue
+palette = 13 = #C586C0     # bright magenta
+palette = 14 = #4EC9B0     # bright cyan 
+palette = 15 = #ffffff     # bright white
+
+# Main colors:
+background = #18181b        # same as your "bg"
+foreground = #dcdccc        # same as your "fg"
+
+# Cursor:
+cursor-color = #8faf9f      # from "cursor_bg"
+cursor-text  = #000d18      # from "cursor_fg"
+
+# Selection:
+selection-background = #5e81ac
+selection-foreground = #dcdccc
+
