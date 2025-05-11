@@ -15,6 +15,10 @@
 
 ![image](stardust.png)
 
+### Color palette 
+
+<img width="400" src="colors.png" alt="color palette">
+
 # Prerequisites
 
 Neovim 0.8.0+
